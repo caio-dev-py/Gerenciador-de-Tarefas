@@ -1,0 +1,309 @@
+/* ================================
+   Tema Dark Moderno (Laranja + Preto)
+   ================================ */
+
+/* Fonte e base */
+body {
+    background: linear-gradient(135deg, #0d0d0d, #1a1a1a);
+    color: #e0e0e0;
+    font-family: 'Segoe UI', Roboto, sans-serif;
+    line-height: 1.6;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+
+/* Links padrão */
+a {
+    color: #ff7f32;
+    text-decoration: none;
+    transition: 0.3s;
+}
+a:hover {
+    color: #ffa559;
+}
+
+/* ================================
+   NAVBAR
+   ================================ */
+.navbar {
+    background: #111 !important;
+    border-bottom: 1px solid #222;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.6);
+}
+
+.navbar-brand {
+    color: #ff7f32 !important;
+    font-weight: bold;
+    letter-spacing: 1px;
+}
+.navbar-brand:hover {
+    color: #ffa559 !important;
+}
+
+.nav-link {
+    color: #e0e0e0 !important;
+    transition: 0.3s;
+}
+.nav-link:hover {
+    color: #ff7f32 !important;
+}
+
+/* ================================
+   BOTÕES
+   ================================ */
+.btn-primary {
+    background: #ff7f32;
+    border: none;
+    transition: 0.3s;
+}
+.btn-primary:hover {
+    background: #e86c1f;
+    box-shadow: 0 0 10px rgba(255,127,50,0.6);
+}
+
+.btn-secondary {
+    background: #333;
+    border: none;
+    color: #f5f5f5;
+    transition: 0.3s;
+}
+.btn-secondary:hover {
+    background: #444;
+    color: #ff7f32;
+}
+
+/* ================================
+   FORMULÁRIOS CENTRALIZADOS
+   ================================ */
+main {
+    flex: 1;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2rem;
+}
+
+form {
+    background: #141414;
+    padding: 2rem 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 0 15px rgba(0,0,0,0.6);
+    width: 100%;
+    max-width: 400px;
+}
+
+/* Inputs */
+.form-control {
+    background: #1c1c1c;
+    border: 1px solid #333;
+    color: #e0e0e0;
+    transition: 0.3s;
+}
+.form-control:focus {
+    background: #262626;
+    border-color: #ff7f32;
+    color: #fff;
+    box-shadow: 0 0 8px rgba(255,127,50,0.5);
+}
+
+/* Labels */
+.form-label {
+    font-weight: bold;
+    color: #ccc;
+}
+
+/* ================================
+   ALERTAS
+   ================================ */
+.alert {
+    border-radius: 10px;
+    border: none;
+    padding: 12px 16px;
+    font-size: 0.9rem;
+    margin-top: 0.8rem;
+    width: 100%;
+}
+
+.alert-danger {
+    background: #661111;
+    color: #ffb3b3;
+}
+
+.alert-success {
+    background: #113311;
+    color: #a5ffb3;
+}
+
+/* ================================
+   CARDS DE TAREFAS
+   ================================ */
+.card {
+    background: #1a1a1a;
+    border: 1px solid #262626;
+    border-radius: 12px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.6);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    padding: 1.5rem;
+    
+    display: flex;
+    flex-direction: column;
+}
+
+.card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 4px 15px rgba(255,127,50,0.4);
+    border-color: #ff7f32;
+}
+
+.card-body {
+    flex: 1; /* ocupa o espaço de cima */
+}
+
+.card-title {
+    font-size: 1.3rem;
+    font-weight: bold;
+    color: #ff7f32;
+    margin-bottom: 0.5rem;
+}
+
+.card-text {
+    color: #ccc;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+
+/* ================================
+   BOTÃO DE EXCLUIR NO CANTO DIREITO
+   ================================ */
+
+#container-botoes-card {
+    display: flex;
+    gap: 10px;
+    flex-direction: column;
+    align-items: flex-end;
+}
+
+#card-botoes {
+    display: flex;
+    gap: 10px;
+    background: transparent;
+    box-shadow: none;
+    padding: 0%;
+
+    flex-direction: row;
+    gap: 10px;
+    justify-content: right;
+}
+
+.btn {
+    padding: 0;
+
+    margin: 0%;
+
+    font-size: 0.9rem;
+    font-weight: bold;
+}
+
+.btn-danger {
+    margin-top: auto; /* empurra o botão pro fim do card */
+    display: flex;
+    justify-content: flex-end; /* canto direito */
+    background: transparent;
+    box-shadow: none;
+}
+
+.btn-danger {
+    background: #b32d2d;
+    border: none;
+    border-radius: 8px;
+    padding: 0.4rem 1rem;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    color: #fff;
+}
+
+.btn-danger:hover {
+    background: #ca6613;
+    box-shadow: 0 0 8px rgba(230,57,57,0.6);
+    transform: scale(1.05);
+}
+
+   
+.btn-primary {
+    margin-top: auto; /* empurra o botão pro fim do card */
+    display: flex;
+    justify-content: flex-start; /* canto direito */
+    background: transparent;
+    box-shadow: none;
+}
+
+.btn-primary {
+    background: #ca5613;
+    border: none;
+    border-radius: 8px;
+    padding: 0.4rem 1rem;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    color: #fff;
+}
+
+.btn-primary:hover {
+    background: rgb(95, 31, 11);
+    box-shadow: 0 0 8px rgba(230,57,57,0.6);
+    transform: scale(1.05);
+}
+
+.btn-secondary {
+    background: #053986;
+    border: none;
+    color: #f5f5f5;
+    transition: 0.3s;
+
+    padding: 4px;
+    width: 100%;
+}
+.btn-secondary:hover {
+    background: #444;
+    color: #ff7f32;
+}
+
+/* ================================
+   CONTEÚDO DA HOME
+   ================================ */
+.container h3 {
+    color: #ff7f32;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.text-body-secondary {
+    color: #bbb !important;
+}
+
+.agrupamento-adicionar {
+    display: flex;
+
+    gap: 10px;
+
+    align-items: center;
+}
+
+/* ================================
+   FOOTER
+   ================================ */
+footer {
+    background: #111;
+    color: #666;
+    text-align: center;
+    padding: 15px 0;
+    border-top: 1px solid #222;
+}
+
+/* ================================
+   INTERAÇÕES SUAVES
+   ================================ */
+button, .btn, .form-control, .nav-link {
+    transition: all 0.3s ease;
+}

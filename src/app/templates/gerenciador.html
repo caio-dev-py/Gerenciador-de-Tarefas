@@ -1,0 +1,70 @@
+{% extends "base.html" %}{% block title %}Gerenciador de tarefas{% endblock %}
+
+{% block content %}
+
+    <div class="container">
+        <h3>Amanhã eu faço tudo certinho, fica vendo.</h3>
+        <p class="text-body-secondary">(Vai tomar no cu to muito cansado amanhã eu termino)</p>
+    
+        {% if tarefas %}
+
+            {% with msgs = get_flashed_messages(with_categories=true) %}
+                {% if msgs %}
+                    {% for cat, msg in msgs %}
+                        <div class="alert alert-{{ cat }} alert-disimissible fade show mt-2">
+                            {{ msg }}
+                            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                        </div>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+
+            <a href="/add_tarefas" class="btn btn-primary">+ Adicionar Tarefa</a>
+
+            {% for tarefa in tarefas %}
+
+                <div class="card mt-3" id="tarefas">
+                    <div class="card-body">
+                        <h4 class="card-title">{{ tarefa.titulo }}</h4>
+                        <p class="card-text">{{ tarefa.descricao }}</p>
+                    </div>
+
+                    <div id="container-botoes-card">
+                        <form action="{{ url_for('user.deletar', id=tarefa.id)}}" method="post" id="card-botoes">
+                            {{ form_deletar.hidden_tag() }}
+                            {{ form_deletar.deletar(class="btn btn-danger") }}
+                        </form>
+                        <form action="{{ url_for('user.editar', id=tarefa.id)}}" method="post" id="card-botoes">
+                            {{ form_editar.hidden_tag() }}
+                            {{ form_editar.editar(class="btn btn-primary") }}
+                        </form>
+                    </div>
+
+                </div>
+
+                
+            {% endfor %}
+
+
+        {% else %}
+            <p class="text-body-secondary">Nenhuma tarefa encontrada. Crie uma!</p>
+            <a href="/add_tarefas" class="btn btn-primary">+ Adicionar Tarefa</a>
+
+            {% with msgs = get_flashed_messages(with_categories=true) %}
+                {% if msgs %}
+                    {% for cat, msg in msgs %}
+                        <div class="alert alert-{{ cat }} alert-disimissible fade show mt-2">
+                            {{ msg }}
+                            <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+                        </div>
+                    {% endfor %}
+                {% endif %}
+            {% endwith %}
+
+        {% endif %}
+
+        
+    
+    </div>
+
+{% endblock %}
